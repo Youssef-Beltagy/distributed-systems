@@ -1,0 +1,13 @@
+rm ChatServer.class
+rm ChatConnection.class
+rm Chat.class
+rm ChatClient.class
+rm MessagePair.class
+rm MessageData.class
+rm oldChat.class
+javac MessageData.java
+javac ChatServer.java
+javac ChatConnection.java
+javac Chat.java
+javac ChatClient.java
+javac OldChat.java
