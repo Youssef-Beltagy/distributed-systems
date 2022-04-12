@@ -1,2 +1,4 @@
-demo/ # Demo Files (RPC, Sockets, Thread)
-provided/ # Provided resources
+# Demo Files (RPC, Sockets, Thread)
+demo/
+# Provided resources
+provided/
