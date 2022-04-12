@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>CSS 434 - Lab Work 2: MPI Java</title>
+</head>
+
+<body bgcolor = "#fffff0">
+
+<p align=center>
+<font size=+3><b>CSS 434</b><br>
+<b>Lab Work 2: MPI Java</b></font><br>
+<b>Professor: Munehiro Fukuda</b><br>
+<b>Lab work date: See the syllabus</b><br>
+<hr>
+
+<h3>1. Purpose</h3>
+
+This laboratory work intends to mitigate your steep learning curve on
+MPI Java. After the professor explains how to use MPI Java and
+demonstrates an execution of ~css434/hw2/MatrixMult.java, you are to
+code and run an MPI Java program that includes MPI.COMM_WORLD.Send( )
+and MPI.COMM_WORLD.Recv( )
+
+<h3>2. Statement of Work</h3>
+
+<ol>
+
+<li> Set up your execution enviornment:
+<pre>
+The process for setting it up to run the first time for each user is
+cumbersome.  After the initial user set-up it works well without much
+fuss.
+
+# login as self
+# make file .mpd.conf  vi/emacs/pico .mpd.conf
+# in it write one line:
+secretword=<secretword>
+
+where <secretword> is a secure key you create but not your normal password
+save the file
+
+# set the correct permissions on this file (other permissions won't work)
+chmod 600 .mpd.conf
+
+# create the mpd.hosts file in your working directry where you run your
+program. The file should include a list of uw1-320 machines as seen in
+~css534/lab2/mpd.hosts:
+
+uw1-320-10.uwb.edu
+uw1-320-11.uwb.edu
+uw1-320-12.uwb.edu
+uw1-320-13.uwb.edu
+
+# edit .bash_profile file as follows:
+
+export PATH=/usr/apps/mpich121-`uname -p`/bin:$PATH
+export JAVAPATH=/usr/java/latest
+export CLASSPATH=$CLASSPATH:/usr/apps/mpiJava-`uname -p`/lib/classes:.
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/apps/mpiJava-`uname -p`/lib
+export PATH=/usr/apps/mpiJava-`uname -p`/src/scripts:$JAVAPATH/bin:$PATH
+
+# either relogin or type at the command line:
+# source .bash_profile
+
+# test that your set-up works on the current host
+mpd &
+mpiexec -n 1 /bin/hostname
+mpdallexit
+
+# if you get an error or warning this is a problem.
+# You should get the hostname of your current host
+
+**  Need to be able to ssh without a password to other machines in order to
+use MPICH.  If this is not already set up:
+**************************************************************************
+**  ssh-keygen -t rsa                                                   **
+**  #  at "Enter file in which to save key", <enter> to accept default  **
+**  #  at "Enter passphrase" <enter> to keep the passphrase empty.      **
+**  #  do the same thing again                                          **
+**  #  then go to the .ssh directory                                    **
+**  # and change the name of id_rsa.pub to authorized_keys              **
+**  cd .ssh                                                             **
+**  mv id_rsa.pub authorized_keys                                       **
+**  # ssh to all lab machines to set up                                 **
+**  # first ssh need to respond "yes" to "continue connecting"          **
+**************************************************************************
+
+The first time a new host is added to the first "ring"; it needs to be
+established by a "yes" response to "continue connecting".  Every time the
+output hangs, type "yes".
+
+You can get all 32 hosts by starting a ring of 4 and typing "yes" 4
+times, then starting a ring of 8 (the original 4 plus 4 more) and
+typing "yes" 4 times.  After the initial 8, I had to add one at a
+time, with the new host always being the last.
+
+Once you have added all the hosts in this way, you never have to type
+"yes" again, they were all established for mpich.
+
+mpdboot -n 4 -v
+mpdallexit
+mpdboot -n 8 -v
+mpdallexit
+
+Note that you have to list 8  machine names in your mpd.hosts file
+before typeing "mpdboot -n 8 -v".
+
+Now, you are ready to run a mpiJava program.
+To compile:
+javac *.java
+
+To run
+mpdboot -n #cpus -v
+prunjava #cpus Hello
+prunjava #cpus MatrixMult size
+
+To stop
+mpdallexit
+</pre>
+
+<li> Code an MPI java program that executes the following square root
+computation:
+
+<ul>
+<li><b>rank 0:</b> creates an array of 100 "double" elements, (say,
+dArray[100]); sends dArray[25] through to dArray[49] to rank 1,
+dArray[50] through to dArray[74] rank 2, and dArray[75] through to
+dArray[99] to rank3; thereafter computes "sqrt" of dArray[0] through
+to dArray[24]; and finally receives the results from the other ranks.
+Use MPI.COMM_WORLD.Send( ) and MPI.COMM_WORLD.Recv( ) to send and
+receive an array with a remote rank. (Don't try to communicate with
+rank0 itself, which hangs up communication.) At the very end, print
+out all array elements.
+
+<li><b>other ranks:</b> creates an array of 25 "double" elements,
+(say, dArray[25]); receives data in dArray[0] through to dArray[24]
+from rank 0; thereafter computes "sqrt" of all the array elements; and
+finally sends the results to rank 0. Use MPI.COMM_WORLD.Recv( ) and
+MPI.COMM_WORLD.Send( ) to receive from and send an array to rank 0.
+
+</ul>
+
+<li> Make sure that you have set up your MPI execution envrionment first.
+
+<li> Compile and run your MPI java program by typing:
+<pre>
+   javac MyProgram.java
+   prunjava 4 MyProgram > output 2> /dev/null
+</pre>
+
+<li> Due to some version inconsistency between mpiJava and the
+underlying MPICH, MPICH complains upon MPI.COMM_WORLD.Finalize( ),
+which however has no side-effect onto computation and actually
+completes your program in success. As shown above, this runtime
+complaint can be discarded with <i>2> /dev/null</i>.
+
+</ol>
+
+<h3>3. Related Materials</h3>
+
+<ul>
+<li>To make a quick review for MPI Java, see the slides: p18-21 of <a
+href="../slides/MPI.ppt">MPI.ppt</a>
+
+<li>For detilas of MPI Java, refer to the following tutorial and
+specificatioin.
+<ol>
+<li> <a
+href="http://www.hpjava.org/courses/arl/lectures/mpi.ppt">http://www.hpjava.org/courses/arl/lectures/mpi.ppt</a>
+<li> <a
+href="http://www.hpjava.org/reports/mpiJava-spec/mpiJava-spec.pdf">http://www.hpjava.org/reports/mpiJava-spec/mpiJava-spec.pdf</a>
+</ol>
+
+</ul>
+
+<h3>4. What to Turn in</h3>
+
+Turn in the following materials to CollectIt by the due date of Program 2:
+<ol>
+<li> Your MPI java program, (i.e., MyProgram.java)
+<li> Your execution output, (i.e., output)
+</ol>
+
+</body>
+</html>
+
