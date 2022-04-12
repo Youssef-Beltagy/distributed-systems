@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>CSS 434 - Lab Work 1a: Java Sockets</title>
+</head>
+
+<body bgcolor = "#fffff0">
+
+<p align=center>
+<font size=+3><b>CSS 434</b><br>
+<b>Lab Work 1a: Java Sockets</b></font><br>
+<b>Professor: Munehiro Fukuda</b><br>
+<b>Lab work date: See the syllabus</b><br>
+<hr>
+
+<h3>1. Purpose</h3>
+
+This laboratory work intends to get you used to Java socket
+programming under the Unix environment. After the professor explains
+about the cssmpiNh machine configuration, the Linux envorinment, and
+Java sockets, you are to complete and run a simple server programs
+with Java sockets.
+
+<h3>2. Statement of Work</h3>
+
+Complete a /CSSDIV/classes/434/lab1a/EchoSErver.java that receives an ASCII
+message from a telnet client nad simply echos it back to the client.
+
+<ul>
+
+<li><b>EchoServer.java:</b> opens a ServerSocket at a given port and
+goes into the following loop: (1) wait for a new client connection,
+(2) read a byte message, (3) simply echo it back, and (4) close this
+client conneciton.
+
+</ul>
+
+To compile your programs, type:
+<pre>
+   [css434@cssmpi1h lab1a]$ javac EchoServer.java
+</pre>
+
+Run your server program first and thereafter telnet
+<pre>
+   [css434@cssmpi1h lab1a]$ java EchoServer 28000
+
+   [css434@cssmpi2h ~]$ telnet cssmpi1h 28000
+   Trying 10.158.82.61...
+   Connected to cssmpi1h.
+   Escape character is '^]'.
+   Hi!
+   Hi!
+   Connection closed by foreign host.
+   [css434@cssmpi2h ~]$ 
+</pre>
+
+Cut and paste the results into a file. 
+
+<h3>3. Related Materials</h3>
+
+<ul>
+<li> To understand Java sockets, see the slides: p5 - 7 of <a
+href="../slides/IPC.ppt">IPC.ppt</a>
+</ul>
+<h3>4. What to Turn in</h3>
+
+Turn in the following materials to Canvas by the due date of Program 1:
+<ol>
+<li> Your complete EchoServer.java
+<li> Your execution output, (i.e., output.txt)
+</ol>
+
+</body>
+</html>
+

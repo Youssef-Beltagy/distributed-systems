@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>CSS 434 - Lab Work 1: Java Sockets and Serialization</title>
+</head>
+
+<body bgcolor = "#fffff0">
+
+<p align=center>
+<font size=+3><b>CSS 434</b><br>
+<b>Lab Work 1: Java Sockets and Serialization</b></font><br>
+<b>Professor: Munehiro Fukuda</b><br>
+<b>Lab work date: See the syllabus</b><br>
+<hr>
+
+<h3>1. Purpose</h3>
+
+This laboratory work intends to get you used to Java socket
+programming under the Unix environment. After the professor explains
+about the LAB-320's machine configuration, the Linux envorinment, and
+Java sockets, you are to code and run simple client/server programs
+with Java sockets.
+
+<h3>2. Statement of Work</h3>
+
+Code a client and a server program that exchange an array of doubles
+as follows.
+
+<ul>
+
+<li><b>Client:</b> instantiates an array of 100 doubles, initializes
+all those doubles to 0.0, 1.0, 2.0, 3.0, .. 99.0, and sends this array
+to the server through a Java socket. The client receives an array of
+doubles back from the server and prints out each array element.
+
+<li><b>Server:</b> receives an array of doubles, updates each element
+with its square root, and sends it back to the client.
+
+</ul>
+
+To compile your programs, type:
+<pre>
+   [mickey@uw1-320-20]$ javac Client.java Server.java
+</pre>
+
+Run your server program first and thereafter your client:
+<pre>
+   [mickey@uw1-320-21]$ java Server
+   [mickey@uw1-320-20]$ java Client > output
+</pre>
+
+Print out your client and server programs as well as output
+<pre>
+   [mickey@uw1-320-21]$ a2ps -PUW1-320-p1 Client.java
+   [mickey@uw1-320-20]$ a2ps -PUW1-320-p1 Server.java
+   [mickey@uw1-320-20]$ a2ps -PUW1-320-p1 output
+</pre>
+
+<h3>3. Related Materials</h3>
+
+<ul>
+<li> To understand Java sockets, see the slides: p5 - 7 of <a
+href="../slides/IPC.ppt">IPC.ppt</a>
+<li> For object serialization, use the ObjectOutputStream class. 
+See the slide p9 of IPC.ppt and 
+<a href="http://java.sun.com/javase/7/docs/api/">Java API Documentation</a>
+<li> For object de-serialization, use the ObjectInputStream class. 
+See the slide p9 of IPC.ppt and 
+<a href="http://java.sun.com/javase/7/docs/api/">Java API
+Documentation</a>
+<li> To compute a square root, use Math.sqrt( ).
+</ul>
+<h3>4. What to Turn in</h3>
+
+Turn in the following materials to CollectIt by the due date of Program 1:
+<ol>
+<li> Your client and erver programs, (i.e., Client.java and Server.java)
+<li> Your execution output, (i.e., output)
+</ol>
+
+</body>
+</html>
+

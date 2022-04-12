@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>CSS 434 - Lab Work 1b: Java Object Serialization</title>
+</head>
+
+<body bgcolor = "#fffff0">
+
+<p align=center>
+<font size=+3><b>CSS 434</b><br>
+<b>Lab Work 1b: Java Object Serialization</b></font><br>
+<b>Professor: Munehiro Fukuda</b><br>
+<b>Lab work date: See the syllabus</b><br>
+<hr>
+
+<h3>1. Purpose</h3>
+
+This laboratory work intends to exercise Java object serialization.
+
+<h3>2. Statement of Work</h3>
+
+Look at TcpClientByte.java and TcpServerByte.java under
+~css434/lab1b. TcpClientByte.java sends a given size of byte array
+through OutputStream to TcpServerByte.java, waits for a response from
+the server, and prints out the result. TcpServerByte.java receives a
+byte array through InpuStream from the client, multiplies each element
+value by the variable named <i>multiplier</i>, and returns the result back to
+the client. TcpServerByte's multiplier is then squared for the next
+client request.
+
+<p>Modify both programs as TcpClientDouble.java and
+TcpServerDouble.java so that they exchange an array of doubles through
+ObjectOutputStream and ObjectInputStream.
+
+<p>
+To compile your programs, type:
+<pre>
+   [css434@cssmpi2h lab1b]$ javac TcpClientDouble.java TcpServerDouble.java
+</pre>
+
+Run your server program first and thereafter your client:
+<pre>
+   [css434@cssmpi2h lab1b]$ java TcpServerByte 28000 10
+
+   [css434@cssmpi1h lab1b]$ java TcpClientDouble 28000 10 cssmpi2h
+   0.0
+   1.0
+   2.0
+   3.0
+   4.0
+   5.0
+   6.0
+   7.0
+   8.0
+   9.0
+   [css434@cssmpi1h lab1b]$ java TcpClientDouble 28000 10 cssmpi2h
+   0.0
+   2.0
+   4.0
+   6.0
+   8.0
+   10.0
+   12.0
+   14.0
+   16.0
+   18.0
+   [css434@cssmpi1h lab1b]$ 
+</pre>
+
+<h3>3. Related Materials</h3>
+
+<ul>
+<li> To understand Java sockets, see the slides: p5 - 7 of <a
+href="../slides/IPC.ppt">IPC.ppt</a>
+<li> For object serialization, use the ObjectOutputStream class. 
+See the slide p9 of IPC.ppt and 
+<a href="http://java.sun.com/javase/8/docs/api/">Java API Documentation</a>
+<li> For object de-serialization, use the ObjectInputStream class. 
+See the slide p9 of IPC.ppt and 
+<a href="http://java.sun.com/javase/8/docs/api/">Java API
+Documentation</a>
+</ul>
+<h3>4. What to Turn in</h3>
+
+Turn in the following materials to Canvas by the due date of Program 1:
+<ol>
+<li> Your client and erver programs, (i.e., TcpClientDouble.java and TcpServerDouble.java)
+<li> Your execution output, (i.e., output.txt)
+</ol>
+
+</body>
+</html>
+
