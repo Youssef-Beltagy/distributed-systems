@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>CSS 434 - Lab Work 3a: RMI</title>
+</head>
+
+<body bgcolor = "#fffff0">
+
+<p align=center>
+<font size=+3><b>CSS 434</b><br>
+<b>Lab Work 3a: RMI</b></font><br>
+<b>Professor: Munehiro Fukuda</b><br>
+<b>Lab work date: See the syllabus</b><br>
+<hr>
+
+<h3>1. Purpose</h3>
+
+This laboratory work intends to let you understand how to code and run
+RMI programs, so that you can focus on your HW3's code design. 
+
+<h3>2. Statement of Work</h3>
+
+We will re-implement Lab1a: EchoServer.java with RMI. However, we are
+not using the original TCP-based EchoServer.java at all. 
+
+<ol>
+
+<li> Look at ~css434/lab3a. You can access Client.java and
+Server.java. The client identifies the server through Naming.lookup()
+and calls its echo() function. On the other hand, the server
+instantiates a ServerImplementation object and registers it through
+Naming.rebind(). Whenever a client calls the server's echo(), the
+server returns the message back to the client's receiveMessage().
+
+<li> You can look at ServerInterface.java. Implement
+ServerImplementation.java that should include its constructor and
+echo() function. The echo() function should just call the client's
+receiveMessage().
+
+<li> Thereafter, look at ClientInterface.java and implement
+ClientImplementation.java. The latter should include its constructor
+and receiveMessage() fucntion. The receiveMessage() function should
+just print out a given message through System.out.println().
+
+
+</ol>
+
+<h3>3. Related Materials</h3>
+
+<ul>
+
+<li> To take a quick review for RMI, see the slides: p19-25 of <a
+href="../slides/RMI.ppt">RMI.ppt</a>
+
+<li> To take a snapshot of the entire X server screen, type:
+<pre>
+    import -window root X.jpeg
+</pre>
+
+</ul>
+
+<h3>4. What to Turn in</h3>
+
+Turn in the following materials to Canvas by the due date of Program 3:
+<ol>
+<li> Your ClientImplementation.java and ServerImplementation.java 
+<li> Your execution output, (e.g., X.jpeg)
+</ol>
+
+</body>
+</html>
+

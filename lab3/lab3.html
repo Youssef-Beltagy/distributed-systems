@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>CSS 434 - Lab Work 3: RMI and Mobile Agents</title>
+</head>
+
+<body bgcolor = "#fffff0">
+
+<p align=center>
+<font size=+3><b>CSS 434</b><br>
+<b>Lab Work 3: RMI and Mobile Agents</b></font><br>
+<b>Professor: Munehiro Fukuda</b><br>
+<b>Lab work date: See the syllabus</b><br>
+<hr>
+
+<h3>1. Purpose</h3>
+
+This laboratory work intends to let you understand how to code and run
+RMI programs and mobile agents, so that you can focus on your HW3's
+code design.
+
+<h3>2. Statement of Work</h3>
+
+<b>Since we have less than 1 hour for Lab 3, let's focus on item 3: MyAgent.</b>
+
+<ol>
+<li> Read <a href="hw3.pdf">program 3's specification</a> carefully to
+understand how to run RMI and UWAgent.
+
+<li> Redesign the lab work 1's client/server programs with RMI. In
+other words, your client program should call the following server function:
+<pre>
+   double[] sqrt( double[] array )
+</pre>
+This function receives an array of doubles, updates each array element with
+its square root, and returns the modified array back to a client.
+
+<li> Code a simple mobile agent, say MyAgent.java that migrates to
+uw1-320-20, thereafter uw1-320-21, and finally uw1-320-22 in this
+order as printing out "hop", "step", and "jump" at a respective site.
+
+</ol>
+
+<h3>3. Related Materials</h3>
+
+<ul>
+
+<li> To take a quick review for RMI, see the slides: p19-25 of <a
+href="../slides/RMI.ppt">RMI.ppt</a>
+
+<li> To take a quick review for UWAgents, see the slides: p21 of <a
+href="../slides/Migration.ppt">Migration.ppt</a>
+
+<li> To get the UWAgents user manual, click <a
+href="../man/uwagent/UWAgentUserManual.pdf">UWAgentUserManual.pdf</a>
+
+<li> To take a snapshot of the entire X server screen, type:
+<pre>
+    import -window root X.jpeg
+</pre>
+
+<li> To print out a snapshot, start <b>firefox</b>, type
+<b>file:///home2</b> in the URL input bar, click your home directory,
+reach your current working directory, click <b>X.jpeg</b>, change the
+print format in landscape through the page setup menu, and print it
+out by selecting <b>uw1-320-p1</b>.
+
+</ul>
+
+
+<h3>4. What to Turn in</h3>
+
+Turn in the following materials to CollectIt by the due date of Program 3:
+<ol>
+<li> <strike>Your RMI programs, (i.e., Client.java and Server.java)</strike>
+<li> <strike>Your RMI execution output</strike>
+<li> Your mobile agent program, (i.e., MyAgent.java)
+<li> Your agent execution output
+</ol>
+
+</body>
+</html>
+
