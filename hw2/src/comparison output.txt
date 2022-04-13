@@ -1,0 +1,37 @@
+
+[ybeltagy@cssmpi1h Program2]$ ./runAdvanced.sh
+o0 vs o1
+Files o0.txt and o1.txt are identical
+
+
+
+o0 vs o2
+Files o0.txt and o2.txt are identical
+
+
+
+o0 vs o3
+Files o0.txt and o3.txt are identical
+
+
+
+o0 vs o4
+Files o0.txt and o4.txt are identical
+
+
+
+o0 vs o5
+Files o0.txt and o5.txt are identical
+
+
+
+o1 vs o5
+Files o1.txt and o5.txt are identical
+
+
+
+Test finished
+
+
+
+[ybeltagy@cssmpi1h Program2]$
