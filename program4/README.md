@@ -4,7 +4,7 @@ I implemented a distributed file system (**DFS**). The DFS uses a central server
 
 ## Table of Contents
 
-[TOC]
+{:toc}
 
 ## Implementation
 
