@@ -1,0 +1,246 @@
+<html>
+<head>
+<title>CSS 434: Parallel and Distributed Computing - Assignments</title>
+</head>
+
+<body bgcolor = "#fffff0">
+
+<p align=center>
+<b><font size=+3>CSS 434: Parallel and Distributed Computing - Assignments</font></b>
+<hr>
+
+<h3>Language</h3>
+
+<p>We use Java for all programming assignments. 
+
+<h3>Operating Systems</h3>
+
+<p>The operating system used for all assignments is Linux CentOS
+(cssmpi1h.uwb.edu - cssmpi8h.uwb.edu):
+
+<p>
+<ol>
+<li>To remotely log into a Linux machine, use ssh and establish a
+connection to <i>cssmpiNh.uwb.edu</i> where N is 1 through to 8.<br>
+From any of these machines, you can see your home directory (i.e.,
+folder) though NFS. 
+
+<li>UW1-320 Lab is our Linux Laboratory where you can use a console of
+any Linux machines. However, please note that they are not the same as
+cssmpiNh.uwb.edu (where N = 1 - 8). They are uw1-320-00p.uwb.edu -
+uw1-320-15p.uwb.edu. Therefore, for your program coding and execution,
+you still need to log in cssmpiNh.uwb.edu.
+
+<li>To transfer files to the cssmpiNh
+<ol>
+<li>From an off-campus Linux machine: use the <b>sftp</b> command and establish a connection to
+<i>cssmpiNh.uwb.edu</i>.  
+
+<li>From a Windows machine: use <b>WinSCP</b>, more information
+at: <a href="http://winscp.net/">http://winscp.net/</a>
+
+<li>From a Mac: use <b>FileZilla</b>, downloadable at <a
+href="https://filezilla-project.org/">
+https://filezilla-project.org/</a>
+</ol>
+</ol>
+
+<h3>The Source for Java Technology</h3> 
+
+Visit <a href="http://www.oracle.com/technetwork/java/index.html">http://www.oracle.com/technetwork/java/index.html
+</a>. This site includes:
+<ol>
+
+<li><a href="http://docs.oracle.com/javase/tutorial/">Java
+Tutorial</a>: helps you run Java programs at Windows, Unix, and Mac,
+introduces the Java language, and lists essential Java classes.
+
+<li><a href="http://docs.oracle.com/javase/8/docs/api/ "> Java SE
+Version 8, API documentation</a>: lists all necessary Java API
+classes. You will frequently visit this page to review what classes
+are ready to use for your assignment programs.
+
+
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE 
+</a>: </sl> allows you to download the Java SE platform </ol>
+
+<h3>Java Programming Environments</h3>
+
+<ul>
+
+<li><b>Compile-time errors:</b> The <i>javac</i> compiler points
+out where your source program has syntax errors. Carefully look at
+its error messages. You will find out code line numbers that
+have syntax errors. Open your source code, go to those lines, and
+fix your bugs.
+
+
+<li><b>Run-time errors:</b> The <i>java</i> virtual machine points out
+where your compiled program has run-time errors. Carefully look at its
+error messages. You will find out your source code's line numbers that
+have run-time errors. Open your source code, go to those lines, and
+fix your bugs.
+
+<li><b>Debugging tools:</b>
+
+The following three may be helpful to develop your Java
+program. However, please note that they may not be always useful when
+you develop multi-threaded programs. (Most assignments are
+multi-threaded programs)
+
+<ol>
+<li><a href="http://www.jcreator.com/">Jcreator</a>
+<li><a href="http://netbeans.org/">NetBeansIDE</a> (available at UW1-320)
+<li><a href="http://www.eclipse.org/">Eclipse</a> (available at UW1-320)
+</ol>
+
+</ul>
+
+<h3>Socket Ports</h3> 
+
+Each student is given 20 exclusive TCP ports to use for their
+programming.  Please refer
+to <a href="https://canvas.uw.edu/courses/1387450/files/folder/Programming?preview=63382305">
+CSS434A Sp20 TCP Port Assigment</a>. 
+
+<h3>Linux Machines</h3>
+
+<ol>
+<li> <it>cssmpi1h.uwb.edu - cssmpi8h.uwb.edu</it>: VMs we use for CSS434 programming.
+<li> <it>uw1-320-00p.uwb.edu - uw1-320-15p.uwb.edu</it>: Consoles you can access at UW1-320 Laboratory
+</ol>
+
+THe lab machines are all operated with CentOS.
+
+<a name="assignments">
+<h3>Assignments</h3>
+</a>
+
+<ol>
+
+<li> <b>Program 1</b> (<a href="hw1.pdf">pdf</a>, <a
+href="hw1.doc">word</a>):
+</b> learns how to use Java-based TCP communication through a design
+of chat client and server program.
+
+<li> <b>Program 2</b> (<a href="hw2.pdf">pdf</a>, <a
+href="hw2.doc">word</a>): exercises how to write a parallel-computing
+application using MPI Java.
+
+<li> <b>Program 3</b> (<a href="hw3.pdf">pdf</a>, <a
+href="hw3.doc">word</a>): compares RMI and mobile agenets in terms of
+programmability and performance.
+
+<li> <b>Program 4</b>
+(<a href="hw4.pdf">pdf</a>, <a href="hw4.doc">word</a>): designs and
+implements a very simple distributed file system. (This year, all
+students will implement only the file server independently.)
+
+</ol>
+
+<h3>Submissions</h3>
+
+<ul>
+
+<li>Each assignment specification shows what to turn in. All the
+submissions must be uploaded to Canvas.
+
+<li>Assignments are due at the <u>beginning</u> of lecture.  No late
+programs will be accepted unless you provide me with a proof showing
+that you have been under an emergency circumstance. No matter the
+circumstances, it is always best to turn in something.
+
+</ul>
+
+<!--
+
+<h3>Grading</h3>
+
+<table cellpadding=1 border="0">
+
+<!--- 
+<tr valign="baseline">
+<td align="left" width=700><b>Criteria</b></td>
+<td align="left" width=100><b>Percentage</b></td>
+</tr>
+
+<!--- 
+<tr valign="baseline">
+
+<td align="left" width=700><b>Selection of</b> a good parallelizable
+and scalable problem <b>in HW2</b>.</td>
+
+<td align="left" width=100>15%</td>
+</tr>
+
+<!--- 
+<tr valign="baseline">
+
+<td align="left" width=700><b>Documentation</b> of your algorithm
+including explanations and illustrations</td>
+
+<td align="left" width=100>20% ~ 25%</td>
+</tr>
+
+<!--- 
+<tr valign="baseline">
+
+<td align="left" width=700><b>Source code</b> that adheres good
+modularization, coding style, and an appropriate amount of
+comments)</td>
+
+<td align="left" width=100>15% ~ 25%</td>
+</tr>
+
+<!--- 
+<tr valign="baseline">
+
+<td align="left" width=700><b>Execution output</b> such as a snapshot
+of your display/windows or contents of standard output redirected to a
+file</td>
+
+<td align="left" width=100>15% ~ 25%</td>
+</tr>
+
+<!--- 
+<tr valign="baseline">
+
+<td align="left" width=700><b>Performance comparison</b> using a
+graph, a table, and/or in statements <b>in HW2</b>.</td>
+
+<td align="left" width=100>15%</td>
+</tr>
+
+<!--- 
+<tr valign="baseline">
+
+<td align="left" width=700><b>Disussions</b> about the nature of a
+problem you chose, the efficienty of your algorithm, possible
+performance improvement, etc.  </td>
+
+<td align="left" width=100>20% - 25%</td>
+</tr>
+
+<!--- 
+<tr valign="baseline">
+
+<td align="left" width=700><b>References</b> of all
+books, research papers, and web pages you used <b>for your HW2</b>.
+</td>
+
+<td align="left" width=100>5%</td>
+</tr>
+
+<!--- 
+<tr valign="baseline">
+
+<td align="left" width=700><b>Total</b> </td>
+
+<td align="left" width=100>100%</td>
+</tr>
+
+</table>
+-->
+
+</body>
+</html>
