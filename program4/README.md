@@ -2,10 +2,6 @@
 
 I implemented a distributed file system (**DFS**). The DFS uses a central server to store the files and allows clients to access or edit files using remote method invocation (**RMI**). The DFS uses a one-writer/multiple-readers lock on the clients: for any file, there is at most one writer at any point in time, but there may be an unlimited number of readers.
 
-## Table of Contents
-
-{:toc}
-
 ## Implementation
 
 This program uses **RMI**, so it is inherently multi-threaded. The execution flow of this server is not linear. Please look at the diagram:

@@ -2,10 +2,6 @@
 
 In this program, I implemented a chat server and a peer-to-peer, server-less chatting application. The chat server ensures consistent ordering because of its central server. The peer-to-peer system ensure causal ordering using vector clocks.
 
-## Table of Contents
-
-[TOC]
-
 ## Part 1: Central Chat Server
 
 In this program, I implemented a server that allows `ChatClient` objects to communicate. The server remains active all the time and makes connections with as many clients as needed. Clients can start using or discontinue using the server without affecting other clients.

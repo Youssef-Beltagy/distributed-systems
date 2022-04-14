@@ -2,10 +2,6 @@
 
 In this program I implemented a Remote Method Invocation (**RMI**) client and a mobile agent (built upon UWAgent) and compared their execution time for processing the same tasks.
 
-## Table of contents
-
-[TOC]
-
 ## Algorithms
 
 The programs should take as an argument a list of servers and commands to execute. Both of the client and the mobile agent start by parsing the program. The client stores the data in static members so it can be accessed in the main. Since there is only one client object in the program, using static members does not cause issues. The UnixAgent stores the data in private data members so it can be serialized to other places.

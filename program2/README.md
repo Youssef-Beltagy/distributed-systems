@@ -4,10 +4,6 @@ In this program, I parallelized a simulation of the thermal conductance of heat 
 
 ![Matrix image](pics/matrix.png)
 
-## Table of Contents
-
-[TOC]
-
 ## Algorithm
 
 Note: I implemented the optimized version that stores only the necessary columns and not the whole matrix. I heard there is extra-credit to be made. 
