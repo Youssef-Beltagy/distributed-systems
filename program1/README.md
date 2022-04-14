@@ -2,11 +2,15 @@
 
 In this program, I implemented a chat server and a peer-to-peer, server-less chatting application. The chat server ensures consistent ordering because of its central server. The peer-to-peer system ensure causal ordering using vector clocks.
 
+## Table of Contents
+
+[TOC]
+
 ## Part 1: Central Chat Server
 
 In this program, I implemented a server that allows `ChatClient` objects to communicate. The server remains active all the time and makes connections with as many clients as needed. Clients can start using or discontinue using the server without affecting other clients.
 
-![](clientserver.jpg)
+![](pics/clientserver.jpg)
 
 ### Central Server Algorithm
 
@@ -30,9 +34,9 @@ Using multiple threads will negate the need for the server to wait half a second
 
 ### Output
 
-![](part1.PNG)
+![](pics/part1.PNG)
 
-![](part1termination.png)
+![](pics/part1termination.png)
 
 ### Code
 
@@ -302,7 +306,7 @@ public class ChatClient {
 
 In this program, I built a peer to peer chat application which enforces causal ordering using a vector clock.
 
-![](p2p.jpg)
+![](pics/p2p.jpg)
 
 ### Vector Clock Algorithm
 
@@ -340,9 +344,9 @@ Furthermore, it is unlikely that the vector of messages will grow enough that us
 
 ### Output
 
-![](part2.png)
+![](pics/part2.png)
 
-![](part2ordering.png)
+![](pics/part2ordering.png)
 
 ### Part2 Code
 
