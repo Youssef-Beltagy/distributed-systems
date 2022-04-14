@@ -1,8 +1,6 @@
 # Program 3 (RMI & Mobile Agents)
 
-In this program I implemented a RMI client and a mobile agent (built upon UWAgent) and compared their execution time for processing the same tasks.
-
-This document is long mainly because the program output is around 60 pages. I made a table of contents to compensate for that.
+In this program I implemented a Remote Method Invocation (**RMI**) client and a mobile agent (built upon UWAgent) and compared their execution time for processing the same tasks.
 
 ## Table of contents
 
@@ -12,7 +10,7 @@ This document is long mainly because the program output is around 60 pages. I ma
 
 The programs should take as an argument a list of servers and commands to execute. Both of the client and the mobile agent start by parsing the program. The client stores the data in static members so it can be accessed in the main. Since there is only one client object in the program, using static members does not cause issues. The UnixAgent stores the data in private data members so it can be serialized to other places.
 
-### UnixClient
+### UnixClient -- An RMI client
 
 After parsing the input, the client simply loops through all the servers. For every server, the client loops through all the commands and calls the server's execute method for each of these commands. The algorithm is as follows:
 
@@ -22,9 +20,9 @@ After parsing the input, the client simply loops through all the servers. For ev
       1. call the current server's execute with the current command
 3. print the output if requested
 
-![](rmi.png)
+![](pics/rmi.png)
 
-### UnixAgent
+### UnixAgent -- A mobile Agent
 
 After parsing the input, the init method is called. The init method has the agent hop to the next place, calling the run method. The run method calls all the commands inside this place and updates the String array that contains the output. The run method has the agent hop to the next agent. If the next agent is the owner of the program, the program terminates. The algorithm is as follows:
 
@@ -35,7 +33,7 @@ After parsing the input, the init method is called. The init method has the agen
    2. execute the commands and add their output to an output array data member. Hop to the next place, calling run.
    3. print the output and exit the program.
 
-![](mobile-agent.png)
+![](pics/mobile-agent.png)
 
 ## Results
 

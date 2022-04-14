@@ -1,6 +1,6 @@
 # Distributed File System Report
 
-I implemented a distributed file system (**DFS**). The DFS uses a central server to store the files and allows clients to access or edit files using remote method invocation. The DFS uses a one-writer/multiple-readers lock on the clients: for any file, there is at most one writer at any point in time, but there may be an unlimited number of readers.
+I implemented a distributed file system (**DFS**). The DFS uses a central server to store the files and allows clients to access or edit files using remote method invocation (**RMI**). The DFS uses a one-writer/multiple-readers lock on the clients: for any file, there is at most one writer at any point in time, but there may be an unlimited number of readers.
 
 ## Table of Contents
 
