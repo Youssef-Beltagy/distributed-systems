@@ -10,7 +10,7 @@ Again, since this report is long, I made a table of contents to help you read it
 
 I followed the assignment as closely as possible and I was trying to provide a behavior similar to what the provided FileClient expects, so I don't have much to share in here. Since this program uses **RMI**, it is inherently multi-threaded. The execution flow of this server is not linear. Please look at the diagram:
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\ExecutionFlow.png)
+![](pics/ExecutionFlow.png)
 
 
 
@@ -511,81 +511,81 @@ I grouped some of the output together when I thought it would make the report mo
 
 ### 1-4
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\1-4.JPG)
+![](pics/1-4.JPG)
 
 
 
 ### 3
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\3.JPG)
+![](pics/3.JPG)
 
 
 
 ### 5a
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\5a.JPG)
+![](pics/5a.JPG)
 
 
 
 ### 5b
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\5b.JPG)
+![](pics/5b.JPG)
 
 
 
 ### 6
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\6.jpg)
+![](pics/6.jpg)
 
 
 
 ### 7
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\7.JPG)
+![](pics/7.JPG)
 
 
 
 ### 8 
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\8.JPG)
+![](pics/8.JPG)
 
 
 
 ### 9 - 10
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\9-10.JPG)
+![](pics/9-10.JPG)
 
 
 
 ### 11 - 12
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\11-12.JPG)
+![](pics/11-12.JPG)
 
 
 
 ### 13
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\13.JPG)
+![](pics/13.JPG)
 
 
 
 ### 14 -15
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\14-15.JPG)
+![](pics/14-15.JPG)
 
 
 
 ### 16 - 17
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\16-17.JPG)
+![](pics/16-17.JPG)
 
 
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\16-17, normal access.JPG)
+![](pics/16-17, normal access.JPG)
 
 
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\16-17, once the writer updates, the clients are invalidated..JPG)
+![](pics/16-17, once the writer updates, the clients are invalidated..JPG)
 
 
 
@@ -593,32 +593,32 @@ I grouped some of the output together when I thought it would make the report mo
 
 I restarted testing at the 18th step because I needed to fix a bug. This is the reason the screenshots will look different from the previous screenshots.
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\before 18.JPG)
+![](pics/before 18.JPG)
 
 
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\18-21.JPG)
+![](pics/18-21.JPG)
 
 
 
 ### 22
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\22.JPG)
+![](pics/22.JPG)
 
 
 
 ### 23
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\23.JPG)
+![](pics/23.JPG)
 
 
 
 ### 24 - 25
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\24-25.JPG)
+![](pics/24-25.JPG)
 
 
 
 ### 26
 
-![](D:\Documents\My documents\education\The University of Washington Bothell\CSS 434\Program4\26.JPG)
+![](pics/26.JPG)
