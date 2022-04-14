@@ -2,7 +2,11 @@
 
 In this program, I parallelized a simulation of the thermal conductance of heat from the top of a metal sheet using Euler's algorithm. I used an MPI tool to initialize multiple processes and share data between them. The metal sheet is simulated with a 2D array where metal atoms are represented as matrix elements. Temperature is represented as an integer between `0` and `9` when printing, but has values between `0.0` and `19.0` during runtime (the bigger the value, the higher the temperature).
 
-![Matrix image](matrix.png)
+![Matrix image](pics/matrix.png)
+
+## Table of Contents
+
+[TOC]
 
 ## Algorithm
 
@@ -10,13 +14,13 @@ Note: I implemented the optimized version that stores only the necessary columns
 
 The simulation is based on time. Euler's algorithm is iterative. Euler's algorithm is used for `T` times (`T` is given as a program argument) to simulate the temperature of the metal at time `T`. In each iteration, Euler's algorithm uses the values of the current particle and 4 adjacent ones to calculate the new temperature of a particle . This necessitates using two arrays at any point in time: one array is the new temperature and the other is the previous temperature that is used to calculate the new one. The sequential program loops over every pixel to calculate its new value for every time iteration.
 
-![Two matrices illustration](two-matrices.jpg)
+![Two matrices illustration](pics/two-matrices.jpg)
 
 To parallelize this algorithm, I divided the matrix into columns and assigned a sets of contiguous columns to multiple processes. While the idea is simple, implementing it is tricky. Euler's algorithm requires four adjacent temperatures to calculate the current pixel's new temperature. This is problematic when we divide the Matrix because now at the boundaries of each set of columns, there are no adjacent columns. The adjacent columns are processed in an entirely different process.
 
 I used Interprocess  communication to overcome this problem. I used Open MPI to initialize the processes and communicate between them. At the beginning of the program, each process is allocated a contiguous block of columns. Then, before the processes start computing the matrix, each process sends its edge columns to its neighboring process. The edge column fulfills the four adjacent pixel requirements.
 
-![Matrix split apart and boundaries disconnected](splicing.jpg)
+![Matrix split apart and boundaries disconnected](pics/splicing.jpg)
 
 MPI uses sockets, so it can lead to deadlocks if two processes try to send to each other at the same time. To avoid this problem, I ensured that even ranked processes send before receiving and odd ranked processes receive before sending.
 
@@ -84,7 +88,7 @@ Since the processes exchange data, the processes must be in sync. Even if they a
 
 Lastly, even after the last time the matrix is printed, the program calculates a new temperature. This is redundant. But since it was in the sequential version, I left it as is.
 
-![Process wait to synchronize](synchronization.jpg)
+![Process wait to synchronize](pics/synchronization.jpg)
 
 ## Code
 
